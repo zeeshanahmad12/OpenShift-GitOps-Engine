@@ -1,0 +1,20 @@
+{
+  "title": "Python WebApp Dashboard",
+  "panels": [
+    {
+      "title": "HTTP Requests",
+      "type": "graph",
+      "targets": [{"expr": "rate(http_requests_total[5m])"}]
+    },
+    {
+      "title": "Pod CPU Usage",
+      "type": "graph",
+      "targets": [{"expr": "container_cpu_usage_seconds_total"}]
+    },
+    {
+      "title": "Pod Memory Usage",
+      "type": "graph",
+      "targets": [{"expr": "container_memory_usage_bytes"}]
+    }
+  ]
+}

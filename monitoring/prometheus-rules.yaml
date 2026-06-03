@@ -1,0 +1,22 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: python-webapp-alerts
+spec:
+  groups:
+  - name: python-webapp
+    rules:
+    - alert: HighCPUUsage
+      expr: container_cpu_usage_seconds_total > 0.85
+      for: 5m
+      labels:
+        severity: warning
+      annotations:
+        summary: "High CPU usage detected"
+    - alert: PodCrashLooping
+      expr: kube_pod_container_status_restarts_total > 3
+      for: 5m
+      labels:
+        severity: critical
+      annotations:
+        summary: "Pod is crash looping"
