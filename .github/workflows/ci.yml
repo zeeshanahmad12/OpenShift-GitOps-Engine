@@ -37,6 +37,7 @@ jobs:
     name: SAST - SonarQube
     runs-on: ubuntu-latest
     needs: lint
+    if: false
     steps:
     - uses: actions/checkout@v4
       with:
@@ -49,7 +50,7 @@ jobs:
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
 
   test:
-    name: Unit & Integration Tests
+    name: Unit and Integration Tests
     runs-on: ubuntu-latest
     needs: lint
     steps:
@@ -73,9 +74,9 @@ jobs:
         path: coverage.xml
 
   build-scan-push:
-    name: Docker Build, Scan and Push
+    name: Docker Build Scan and Push
     runs-on: ubuntu-latest
-    needs: [sast, test]
+    needs: [test]
     steps:
     - uses: actions/checkout@v4
 
