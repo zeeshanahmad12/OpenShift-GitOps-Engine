@@ -4,3 +4,12 @@ rules:
     max: 150
   truthy:
     allowed-values: ['true', 'false']
+  comments:
+    min-spaces-from-content: 1
+  braces:
+    forbid: false
+  brackets:
+    forbid: false
+  indentation:
+    spaces: 2
+    indent-sequences: true
