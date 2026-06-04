@@ -1,7 +1,10 @@
-from flask import Flask
-from app.routes import bp
-from app.config import config
 import os
+
+from flask import Flask
+
+from app.config import config
+from app.routes import bp
+
 
 def create_app():
     app = Flask(__name__)
@@ -10,7 +13,8 @@ def create_app():
     app.register_blueprint(bp)
     return app
 
-app = create_app()
+
+application = create_app()
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    application.run(host='0.0.0.0', port=8080)

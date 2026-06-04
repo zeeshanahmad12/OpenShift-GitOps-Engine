@@ -18,8 +18,8 @@ jobs:
       with:
         python-version: '3.11'
 
-    - name: Install lint dependencies
-      run: pip install pylint flake8 yamllint shellcheck-py
+    - name: Install dependencies
+      run: pip install flask pylint flake8 yamllint shellcheck-py
 
     - name: Run pylint
       run: pylint app/ --rcfile=.linting/.pylintrc
@@ -73,7 +73,7 @@ jobs:
         path: coverage.xml
 
   build-scan-push:
-    name: Docker Build, Scan & Push
+    name: Docker Build, Scan and Push
     runs-on: ubuntu-latest
     needs: [sast, test]
     steps:

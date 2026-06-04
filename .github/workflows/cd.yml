@@ -19,7 +19,7 @@ jobs:
       run: bash scripts/update-manifest.sh ${{ github.event.workflow_run.head_sha }}
 
   smoke-test:
-    name: Smoke Test - Staging
+    name: Smoke Test Staging
     runs-on: ubuntu-latest
     needs: update-manifest
     steps:

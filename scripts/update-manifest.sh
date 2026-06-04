@@ -2,7 +2,6 @@
 set -e
 
 IMAGE_TAG=$1
-MANIFEST_FILE="k8s/overlays/staging/kustomization.yaml"
 
 if [ -z "$IMAGE_TAG" ]; then
   echo "ERROR: Image tag required"
