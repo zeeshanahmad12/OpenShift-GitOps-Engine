@@ -5,7 +5,7 @@ bp = Blueprint('main', __name__)
 
 @bp.route('/')
 def index():
-    return jsonify({'message': 'Python WebApp CI/CD Pipeline', 'status': 'running'})
+    return jsonify({'message': 'Python WebApp CI/CD Pipeline - v2.0', 'status': 'running'})
 
 
 @bp.route('/health')
