@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: python-webapp
-          image: quay.io/fiverrgig4493/python-webapp:7b0085963067808665c16f034a5fc974018823ae
+          image: quay.io/fiverrgig4493/python-webapp:2c82534fcff7c7527f7331eee6a789189ed05120
           ports:
             - containerPort: 8080
           env:
