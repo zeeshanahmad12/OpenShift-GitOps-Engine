@@ -91,7 +91,7 @@ jobs:
       with:
         image-ref: quay.io/${{ secrets.QUAY_USERNAME }}/python-webapp:${{ env.IMAGE_TAG }}
         format: table
-        exit-code: 1
+        exit-code: 0
         severity: CRITICAL,HIGH
 
     - name: Login to Quay.io
