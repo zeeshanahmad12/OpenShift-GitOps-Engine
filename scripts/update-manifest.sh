@@ -13,7 +13,7 @@ sed -i "s|IMAGE_TAG|${IMAGE_TAG}|g" k8s/base/deployment.yaml
 
 git config user.email "ci@github.com"
 git config user.name "CI Bot"
-git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/zeeshanahmad12/OpenShift-GitOps-Engine.git
+git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/zeeshanahmad12/OpenShift-GitOps-Engine.git"
 git add k8s/base/deployment.yaml
 git commit -m "ci: update image tag to ${IMAGE_TAG}"
 git push
